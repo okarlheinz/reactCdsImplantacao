@@ -10,9 +10,9 @@ const Home = () => {
     <Router>
       <div className="d-flex">
         <SideBar />
-        <div className="content"> {/* Esta div pode ter estilos para seu conteúdo */}
+        <div className="content" style={{ marginLeft: '500px', flex: '1' }}> {/* Adicione margem à esquerda para dar espaço à sidebar */}
           <Routes>
-            <Route path="/" element={<PaginaIInicial/>} />
+            <Route path="/" element={<PaginaIInicial />} />
             <Route path="/geradorSenha" element={<GeradorSenha />} />
           </Routes>
         </div>
@@ -20,5 +20,6 @@ const Home = () => {
     </Router>
   );
 };
+
 
 export default Home;

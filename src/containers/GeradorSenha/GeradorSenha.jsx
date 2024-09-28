@@ -1,20 +1,16 @@
+// GeradorSenha.js
 import React, { useState } from 'react';
-import './geradorSenha.css'; // Você pode criar um arquivo CSS para os estilos customizados
-import Swal from 'sweetalert2';
-
-
+import './geradorSenha.css';
+import BtnCopiar from '../../components/CommomComponents/btnCopiar/btnCopiar';
 
 const GeradorSenha = () => {
-    // Estados para gerenciar as opções selecionadas pelo usuário
     const [quantidade, setQuantidade] = useState(8);
     const [letrasMaiusculas, setLetrasMaiusculas] = useState(true);
     const [letrasMinusculas, setLetrasMinusculas] = useState(true);
     const [numeros, setNumeros] = useState(true);
     const [caracteresEspeciais, setCaracteresEspeciais] = useState(false);
     const [senhaGerada, setSenhaGerada] = useState('');
-    const [copiada, setCopiada] = useState(false);
 
-    // Função para gerar a senha
     const gerarSenha = () => {
         let caracteres = '';
         const maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -34,21 +30,6 @@ const GeradorSenha = () => {
         }
 
         setSenhaGerada(senha);
-        setCopiada(false);
-    };
-
-    // Função para copiar a senha para a área de transferência
-    const copiarSenha = () => {
-        navigator.clipboard.writeText(senhaGerada);
-        setCopiada(true);
-
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Comando copiado para área de transferencia!",
-            showConfirmButton: false,
-            timer: 1500,
-          });
     };
 
     return (
@@ -118,22 +99,21 @@ const GeradorSenha = () => {
                 <button type="button" className="btn btn-primary mt-3" onClick={gerarSenha}>
                     Gerar Senha
                 </button>
-                {senhaGerada && (
-                    <button type="button" className="btn btn-success mt-3" onClick={copiarSenha}>
-                        <i className="bi bi-copy"></i> Copiar
-                    </button>
-                )}
-                {senhaGerada && <div id="senhaGerada" className="mt-3">{senhaGerada}</div>}
-            </form>
+                <BtnCopiar senha={senhaGerada} /> {/* Utilize o novo componente */}
 
-            {copiada && (
-                <div className="alert alert-danger alert-dismissible fade show alert-custom" role="alert">
-                    Copiada para a área de transferência
-                    <button type="button" className="close" onClick={() => setCopiada(false)} aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            )}
+                {senhaGerada && (
+                    <div className="mt-3">
+                        <label htmlFor="senhaGerada">Senha Gerada:</label>
+                        <textarea
+                            id="senhaGerada"
+                            className="form-control"
+                            value={senhaGerada}
+                            readOnly
+                            style={{ resize: 'none', backgroundColor: '#f0f0f0' }} // Fundo acinzentado e não redimensionável
+                        />
+                    </div>
+                )}
+            </form>
         </div>
     );
 };
