@@ -1,0 +1,111 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url('../../assets/img/wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #343a40;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    overflow-y: auto; /* Permite o scroll vertical */
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Color when hovered */
+}
+
+.sidebar {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* Thumb and track color */
+}
+
+.logo-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu-container {
+    width: 100%;
+    overflow-y: auto; /* Garante que o menu interno também permita scroll, se necessário */
+}
+
+.menu-link:not(.submenu) {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #343a40;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-link:not(.submenu):hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.menu-link:not(.submenu).active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.menu-link:not(.active) {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+    background-color: #3c4248;
+}
+
+.submenu .menu-link {
+    background-color: #3c4248;
+}
+
+.submenu .menu-link:hover {
+    background-color: #4c5258;
+}
+
+.submenu .menu-link:hover,
+.submenu .menu-link.active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 15px;
+    width: calc(100% - 200px);
+}

@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url('./IMG/wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.highlight-row:hover {
+    background-color: #f0f8ff !important;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #343a40;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    overflow-y: auto; /* Permite o scroll vertical */
+}
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+.sidebar::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Color when hovered */
+}
+
+/* Custom scrollbar styles for Firefox */
+.sidebar {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* Thumb and track color */
+}
+
+.logo-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu-container {
+    width: 100%;
+    overflow-y: auto; /* Garante que o menu interno também permita scroll, se necessário */
+}
+
+.menu-link:not(.submenu) {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #343a40;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-link:not(.submenu):hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.menu-link:not(.submenu).active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.menu-link:not(.active) {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+    background-color: #3c4248;
+}
+
+.submenu .menu-link {
+    background-color: #3c4248;
+}
+
+.submenu .menu-link:hover {
+    background-color: #4c5258;
+}
+
+.submenu .menu-link:hover,
+.submenu .menu-link.active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 15px;
+    width: calc(100% - 200px);
+}
+
+.server-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.server-link {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.server-link:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.server-icon {
+    font-size: 50px;
+    cursor: pointer;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.server-description {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.login-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#videoPlayer {
+    margin-top: 20px;
+}
+
+.alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    z-index: 1050;
+    display: none;
+}
+
+.useful-links {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.useful-title {
+    font-size: 24px;
+    font-weight: bold;
+    /* color: #007bff; */
+    margin-bottom: 20px;
+}
+
+.link-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.link-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease;
+}
+
+.link-item:hover {
+    transform: scale(1.2);
+}
+
+.link-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.link-description {
+    font-size: 16px;
+    color: #000;
+}
+
+#searchField {
+    max-width: 200px;
+}
+
